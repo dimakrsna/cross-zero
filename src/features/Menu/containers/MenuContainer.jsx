@@ -36,7 +36,7 @@ export class MenuContainer extends Component {
     render() {
         return (
             <nav className="menu">
-                <StartBtnComponent startBtnHandler={this.startBtnHandler} winnerStatus={this.props.winnerStatus}/>
+                {!this.props.gameState && <StartBtnComponent startBtnHandler={this.startBtnHandler} winnerStatus={this.props.winnerStatus}/>}
                 {this.props.gameState && <ResetBtnComponent resetBtnHandler={this.resetBtnHandler} winnerStatus={this.props.winnerStatus}/>}
             </nav>
         )

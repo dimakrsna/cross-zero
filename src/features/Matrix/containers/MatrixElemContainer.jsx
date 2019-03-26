@@ -64,6 +64,8 @@ class MatrixElemContainer extends Component {
     }
 
     checkArr(arr, lengthArr){
+        let { dispatch } = this.props
+        
         let resultX = arr.filter(
             (childVal) => {
                 return childVal == 'x'
@@ -77,14 +79,16 @@ class MatrixElemContainer extends Component {
         )
 
         if (resultX.length == lengthArr) {
-            this.props.dispatch(writeMessageAction({ text: 'Поздравляем! Выиграл Х' }))
-            this.props.dispatch(changeWinnerStatusAction(true))
+            dispatch(writeMessageAction({ text: 'Поздравляем! Выиграл Х' }))
+            dispatch(changeWinnerStatusAction(true))
+            dispatch(changePlayerAction('o'))
             return
         }
 
         if (resultO.length == lengthArr) {
-            this.props.dispatch(writeMessageAction({ text: 'Поздравляем! Выиграл O' }))
-            this.props.dispatch(changeWinnerStatusAction(true))
+            dispatch(writeMessageAction({ text: 'Поздравляем! Выиграл O' }))
+            dispatch(changeWinnerStatusAction(true))
+            dispatch(changePlayerAction('x'))
             return
         }
     } 
