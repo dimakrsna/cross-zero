@@ -1,4 +1,4 @@
-# Todo
+# Cross-zero
 Игра "Крестики нолики".
 
 Стек технологий: **React, Redux, ES6, Webpack, SCSS**.
